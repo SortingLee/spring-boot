@@ -1,10 +1,9 @@
-package com.example.springboot.Mappter;
+package com.example.springboot.mapper;
 
 import com.example.springboot.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PathVariable;
 
 @Mapper
 @Component
@@ -18,10 +17,10 @@ public interface UserMapper {
     void insertUser(User user);
 
     //PUT
-    void updateUser(@PathVariable("userSeq") long userSeq);
+    void updateUser(@Param("userSeq") long userSeq);
 
     //DELETE
-    void deleteUser(@PathVariable("userSeq") long userSeq);
+    void deleteUser(@Param("userSeq") long userSeq);
 
 
 }

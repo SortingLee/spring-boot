@@ -8,6 +8,7 @@ import org.apache.ibatis.type.Alias;
 public class User {
     private Long userSeq;
     private String name;
-    private String gender;
     private Integer age;
+    private String belong;
+    private String girlFriend;
 }

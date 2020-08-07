@@ -1,26 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.springboot.Mappter.UserMapper">
+<mapper namespace="com.example.springboot.mapper.UserMapper">
+    <!-- resultType을 User에서 @Alias를 통해 User로 설정함. Alias는 MyBatis config에서 매핑해줬음.-->
     <select id="selectUser" resultType="User">
         SELECT
-                user_seq
+                userSeq
             ,   name
-            ,   gender
             ,   age
+            ,   belong
+            ,   girlFriend
         FROM
-            `user`
+            user
         WHERE
-            user_seq = #{userSeq}
+            userSeq = #{userSeq}
     </select>
 
     <insert id="insertUser">
         INSERT INTO
             user
         VALUES (
-                #{userSeq}
-            ,   #{name}
-            ,   #{gender}
-            ,   #{age}
+                #{userSeq} ,
+                #{name} ,
+                #{age} ,
+                #{belong} ,
+                #{girlFriend}
         )
     </insert>
+
+    <delete id="deleteUser">
+        DELETE
+        FROM
+            'user'
+        WHERE
+            userSeq = #{userSeq}
+    </delete>
+
+    <update id="updateUser">
+        UPDATE
+            user
+        SET
+            userSeq = #{userSeq}
+        WHERE
+            name = 'updateUser'
+    </update>
 </mapper>
+
+
+        <!--Mapper를 위한 xml-->
