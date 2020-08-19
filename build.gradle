@@ -13,14 +13,21 @@ configurations {
 	}
 }
 
+//메이븐 리포지토리에서 다운로드 받아라!
 repositories {
 	mavenCentral()
 }
 
+//의존성 - gradle이 의존성을 관리해준다.
+//나는 아래에 MySQL, MyBatis등만 추가했지만, gradle이 해당 라이브러리와 관련된, 의존된 라이브러리를 모두 가져와준다.
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+//	thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
 //	MySQL
 	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
@@ -33,7 +40,6 @@ dependencies {
 //	compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2")
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile('mysql:mysql-connector-java')
-
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

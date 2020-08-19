@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<!--
+xmlns:th="http://www.thymeleaf.org"를 html태그 안에 넣어주면, thymeleaf 템플릿 엔진의 문법을 사용할 수 있다.
+-->
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text=" '안녕하세요. ' + ${data}" > welcome!!</p>
+<!--th:text안의 ${data}부분은 controller에서 "hello" Mapping의 hello method에서 반환한 값으로 치환됨.-->
+<!--템플릿 엔진이 처리되어 html파일이 반환됨.-->
+</body>
+</html>
