@@ -1,4 +1,4 @@
-package com.example.springboot.Mappter;
+package com.example.springboot.Mapper;
 
 import com.example.springboot.domain.User;
 import org.apache.ibatis.annotations.Mapper;

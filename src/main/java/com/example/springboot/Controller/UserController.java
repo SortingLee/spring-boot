@@ -40,7 +40,6 @@ public class UserController {
 
     @PutMapping("/user/{userSeq}")
     public void updateBoard() {
-
     }
 
     @DeleteMapping("/user/{userSeq}")
